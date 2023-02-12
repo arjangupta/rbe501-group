@@ -1,130 +1,55 @@
-% The very first letter is a 2 line initial drop letter followed
-% by the rest of the first word in caps.
-% 
-% form to use if the first word consists of a single letter:
-% \IEEEPARstart{A}{demo} file is ....
-% 
-% form to use if you need the single drop letter followed by
-% normal text (unknown if ever used by the IEEE):
-% \IEEEPARstart{A}{}demo file is ....
-% 
-% Some journals put the first two words in caps:
-% \IEEEPARstart{T}{his demo} file is ....
-% 
-% Here we have the typical use of a "T" for an initial drop letter
-% and "HIS" in caps to complete the first word.
-\IEEEPARstart{T}{his} demo file will be edited by Will. 
-It is intended to serve as a ``starter file''
-for IEEE journal papers produced under \LaTeX\ using
-IEEEtran.cls version 1.8b and later.
-% You must have at least 2 lines in the paragraph with the drop letter
-% (should never be an issue)
-I wish you the best of success.
+Accurate needle placement in deep percutaneous procedures such as
+targeted biopsy is critical to reducing procedure time, cost, and
+to increase patient comfort by reducing the need for multiple attempts.
+Intra-operative imaging can assist with this, but it does not account
+for unmodeled needle deflection or target shift. This can be compensated
+for by rotating a bevel-tipped needle according to a closed-loop image-guided
+control system. A fully autonomous needle insertion system is not desirable
+as it typically removes the physician entirely from patient contact, so
+a cooperative control system is presented. The physician applies an
+input force directly while the active compensation through needle rotation
+is performed autonomously.
 
-\hfill mds
- 
-\hfill February 7, 2023
+This work was motivated by the robotics system described in Eslami
+\textit{et al}\textsuperscript{REFERENCE 7 HERE}. While this system
+aligned the needle correctly, it still suffered from positional
+inaccuracy introduced by unmodeled needle deflection and target shift.
+The goal of this research is to implement a cooperative controlled
+needle correction system with closed-loop active compensation. This
+system must be compatible with an MR environment and have needle
+localization in real-time MR images as shown in Patel \textit{et al}\textsuperscript{REFERENCE 18 here}
 
-\subsection{Subsection Heading Here}
-Subsection text here.
+The error in needle accuracy due to deflection, and the amount
+of active compensation possible, is limited by the mechanical 
+properties of the needle. Prior work to model this has been widely implemented
+using the kinematic bicycle model\textsuperscript{REFERENCE 32 here}
+as well as a joint kinematic and dynamic system.\textsuperscript{REFERENCE 24 here}
+Other approaches (REFERNCE 6, 14) use a duty-cycled approach for 
+needle steering. This approach requires insertion and rotation to
+be tightly coupled, prohibiting cooperative control. Rossa \textit{et al},
+\textsuperscript{reference 21} presented a similar system with manual
+insertion and autonomous rotation, however it did not have a
+cooperative insertion approach, which increases the accuracy of the
+insertion axis as well.
 
-% needed in second column of first page if using \IEEEpubid
-%\IEEEpubidadjcol
+A cooperative approach was chosen in this system to maintain
+phsyician interaction with the patient. Fully autonomous, isolated
+solutions are more likely to face increased regulatory scrutiny.\textsuperscript{REFERENCE 20}
+Teleoperated systems have been developed to address this issue(REFERENCE 28, 23, 17).
+These systems often employ haptic or vibrational feedback to assist the
+physician in positioning the needle, however they still isolate the
+physician physically from the patient. A cooperative control scheme
+has the benefits of teleoperation while keeping the physician in the
+same room as the patient. There are many successful cooperative devices
+in use today(REFERENCE 22, 11, 3, 13).
 
-\subsubsection{Subsubsection Heading Here}
-Subsubsection text here.
-
-
-% An example of a floating figure using the graphicx package.
-% Note that \label must occur AFTER (or within) \caption.
-% For figures, \caption should occur after the \includegraphics.
-% Note that IEEEtran v1.7 and later has special internal code that
-% is designed to preserve the operation of \label within \caption
-% even when the captionsoff option is in effect. However, because
-% of issues like this, it may be the safest practice to put all your
-% \label just after \caption rather than within \caption{}.
-%
-% Reminder: the "draftcls" or "draftclsnofoot", not "draft", class
-% option should be used if it is desired that the figures are to be
-% displayed while in draft mode.
-%
-%\begin{figure}[!t]
-%\centering
-%\includegraphics[width=2.5in]{myfigure}
-% where an .eps filename suffix will be assumed under latex, 
-% and a .pdf suffix will be assumed for pdflatex; or what has been declared
-% via \DeclareGraphicsExtensions.
-%\caption{Simulation results for the network.}
-%\label{fig_sim}
-%\end{figure}
-
-% Note that the IEEE typically puts floats only at the top, even when this
-% results in a large percentage of a column being occupied by floats.
-
-
-% An example of a double column floating figure using two subfigures.
-% (The subfig.sty package must be loaded for this to work.)
-% The subfigure \label commands are set within each subfloat command,
-% and the \label for the overall figure must come after \caption.
-% \hfil is used as a separator to get equal spacing.
-% Watch out that the combined width of all the subfigures on a 
-% line do not exceed the text width or a line break will occur.
-%
-%\begin{figure*}[!t]
-%\centering
-%\subfloat[Case I]{\includegraphics[width=2.5in]{box}%
-%\label{fig_first_case}}
-%\hfil
-%\subfloat[Case II]{\includegraphics[width=2.5in]{box}%
-%\label{fig_second_case}}
-%\caption{Simulation results for the network.}
-%\label{fig_sim}
-%\end{figure*}
-%
-% Note that often IEEE papers with subfigures do not employ subfigure
-% captions (using the optional argument to \subfloat[]), but instead will
-% reference/describe all of them (a), (b), etc., within the main caption.
-% Be aware that for subfig.sty to generate the (a), (b), etc., subfigure
-% labels, the optional argument to \subfloat must be present. If a
-% subcaption is not desired, just leave its contents blank,
-% e.g., \subfloat[].
-
-
-% An example of a floating table. Note that, for IEEE style tables, the
-% \caption command should come BEFORE the table and, given that table
-% captions serve much like titles, are usually capitalized except for words
-% such as a, an, and, as, at, but, by, for, in, nor, of, on, or, the, to
-% and up, which are usually not capitalized unless they are the first or
-% last word of the caption. Table text will default to \footnotesize as
-% the IEEE normally uses this smaller font for tables.
-% The \label must come after \caption as always.
-%
-%\begin{table}[!t]
-%% increase table row spacing, adjust to taste
-%\renewcommand{\arraystretch}{1.3}
-% if using array.sty, it might be a good idea to tweak the value of
-% \extrarowheight as needed to properly center the text within the cells
-%\caption{An Example of a Table}
-%\label{table_example}
-%\centering
-%% Some packages, such as MDW tools, offer better commands for making tables
-%% than the plain LaTeX2e tabular which is used here.
-%\begin{tabular}{|c||c|}
-%\hline
-%One & Two\\
-%\hline
-%Three & Four\\
-%\hline
-%\end{tabular}
-%\end{table}
-
-
-% Note that the IEEE does not put floats in the very first column
-% - or typically anywhere on the first page for that matter. Also,
-% in-text middle ("here") positioning is typically not used, but it
-% is allowed and encouraged for Computer Society conferences (but
-% not Computer Society journals). Most IEEE journals/conferences use
-% top floats exclusively. 
-% Note that, LaTeX2e, unlike IEEE journals/conferences, places
-% footnotes above bottom floats. This can be corrected via the
-% \fnbelowfloat command of the stfloats package.
+Prior work in steering needles via needle deflection has focused
+on thin, flexible needles which are not suitable for a clinical
+biopsy scenario. The approach presented here is focused on a
+clinical translation.\textit{The primary contributions of this
+work are development of a method of closed-loop active compensation
+for unmodeled needle deflection and target shift under cooperatively
+controlled needle insertion, and experimental validation of this on 
+an existing robotic needle placement system with results showing the
+accuracy improvements of autonomous needle placement can be 
+maintained in user directed cooperative insertion.}

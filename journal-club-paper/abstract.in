@@ -1,1 +1,16 @@
-The abstract by Will goes here.
+Needle biopsies using intra-operative imaging assistance
+do not currently account for unmodeled needle deflection or
+target shift. Positional accuracy can be improved by rotating
+a bevel-tipped needle via a closed-loop image compensation
+controller. A physician-cooperative approach was used to increase
+patient-physician interaction while providing the physician
+with robot-assisted accuracy. Needle insertion tests were
+performed using this and a fully autonomous system to verify
+improvements in accuracy. The cooperative system showed no
+statistically significant difference in accuracy from the
+autonomous system, with an average accuracy of 3.56mm\textsubscript{rms}
+The closed-loop control system was able to compensate for
+target shift up to the point where the error approached the
+maximum curvature possible for the needle. This shows that
+a cooperative, closed-loop control system during a needle
+biopsy can improve positional accuracy.
