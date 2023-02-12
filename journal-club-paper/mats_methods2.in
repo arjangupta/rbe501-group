@@ -1,4 +1,14 @@
 \subsection{Feature Localization}
-Sample text inside input file for Part 2 of materials and methods.
+For evaluation of the closed-loop active compensation during cooperatively
+controlled needle insertions, we use two cameras to capture real-time
+images of the needle tip and target within the robot workspace.
+This serves as a proxy for medical imaging, and in fact the compensation
+technique is not dependent on the modality of the medical image. The two
+cameras are place orthogonal to each other, and are run by a standalone
+software application.
+
+In the software application, we employed Farneb\"{a}ck's 
+algorithm \cite{Gunnar2003} to execute on captured video frames
+to localize the moving needle tip. 
 
 \subsection{Active Compensation}
