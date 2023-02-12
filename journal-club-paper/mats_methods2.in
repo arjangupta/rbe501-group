@@ -64,3 +64,8 @@ Gang Li's excellent disseration \cite{Li2016PhD} for the angular velocity profil
 graph of CURV. While CURV was used in this work, it is possible to use other
 bevel tip based curvature models.
 
+To calculate the $\theta_d$ in our case, we used the $atan2$ function
+on the $x$ and $y$ positions obtained from $T^{Tip}_{Target}$. We set
+$c$ is Equation \ref{ang-vel-eqn} to $10\degree$ for all insertions. The
+$\alpha$ was chosen as an intermediate curvature value.
+
