@@ -36,3 +36,31 @@ to the robot controller. As seen by Figure \ref{reg-frames-fig},
 the transformation sequence 
 ${T^{Home}_{Pose}}^{-1} {T^{Home}_{Reg}}^{-1} {T^{Image}_{Reg}}^{-1}$
 is used to express the registration with respect to the robot pose.
+
+Throughout the insertion, the robot continuously receives the tip
+and target locations with respect to the image. Using the
+known transformation matrices, it determines the tip and target
+with respect to the robot pose. Naturally it can then compute
+the target location with respect to the tip, or $T^{Tip}_{Target}$.
+This tells us our desired compensatory effort.
+
+To achieve this compensatory effort in all the insertion trials 
+of our work, we chose to use Gang Li's novel CURV model \cite{Li2016PhD},
+where both magnitude and direction of the desired effort can be
+implemented. Assume that $\theta$ is the current rotational angle
+of the bevel, and $\theta_d$ is the desired angle of the bevel for
+compensation. At any angular position, we can use the following equation.
+
+\begin{equation} \label{ang-vel-eqn}
+    \hat{\omega}(\theta, \theta_d) = 1 - \alpha e^{-\frac{(\theta-\theta_d)^2}{2c^2}}
+\end{equation}
+
+Equation \ref{ang-vel-eqn} gives the angular velocity as a function
+of $\theta$ and $\theta_d$. Here, widening the Guassian width $c$
+gives a bigger range of angles where rotation occurs below the nominal
+velocity. Also, increasing the Guassian magnitude $\alpha$ leads to more
+deflection in $\theta_d$. The authors of this synopsis recommend referencing
+Gang Li's excellent disseration \cite{Li2016PhD} for the angular velocity profile
+graph of CURV. While CURV was used in this work, it is possible to use other
+bevel tip based curvature models.
+
