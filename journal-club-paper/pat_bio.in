@@ -1,4 +1,8 @@
 
-\begin{IEEEbiography}{Patrick Donelan}
-Biography text here.
+\begin{IEEEbiography}
+[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{pat_pic.png}}]{Patrick Donelan}
+Patrick Donelan received a B.S. in electrical engineering from Rensselaer Polytechnic Institute (Troy, NY) in 2021 with a concentration in robotics and automation.
+He is currently pursuing a M.S. in robotics engineering from Worcester Polytechnic Institute (Worcester, MA) with an expected graduation date in spring of 2026.
+He works full-time as in engineer for STR (Woburn, MA). At STR, he writes software for signal processing algorithms and simulations.
+His career interests are multi-agent control and swarm robotics.
 \end{IEEEbiography}
