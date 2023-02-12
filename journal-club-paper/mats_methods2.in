@@ -67,5 +67,18 @@ bevel tip based curvature models.
 To calculate the $\theta_d$ in our case, we used the $atan2$ function
 on the $x$ and $y$ positions obtained from $T^{Tip}_{Target}$. We set
 $c$ is Equation \ref{ang-vel-eqn} to $10\degree$ for all insertions. The
-$\alpha$ was chosen as an intermediate curvature value.
+$\alpha$ was chosen as an intermediate curvature value by projecting the needle
+tip orientation onto the target plane. For projecting the orientation,
+we first found the Euler angle rotation about the x and y axes, and then
+used the following equations,
+
+\begin{equation}
+    X_{projected} = D_i \times \arctan(Rot(y))
+\end{equation}
+
+\begin{equation}
+    Y_{projected} = D_i \times \arctan(Rot(x))
+\end{equation}
+
+Where $D_i$ is the remaining insertion depth.
 
