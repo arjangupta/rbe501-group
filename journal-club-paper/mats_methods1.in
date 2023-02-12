@@ -33,3 +33,28 @@ shown to work in MR environments by \cite{Nycz2017}.
 \end{figure}
 
 \subsection{Cooperative Needle Insertion}
+The velocity of the needle insertion is calculated using the input force from the physician as well
+as the forces experienced by the needle, namely cutting force, tip stiffness, and friction 
+\cite{Okamura2004} using Eq. \eqref{insertion-velocity-eq}. Thus, it is evident that the physician
+can control the insertion velocity through the force they apply. Insertion velocity profiles are
+illustrated for varying values of the decay constant $\lambda$ in Figure
+\ref{insertion-velocity-fig}. In the control system, if the desired insertion depth is reached,
+$\delta F$ is set to 0. Once the desired velocity is calculated using Equation
+\ref{insertion-velocity-eq} a PID controller is used to maintain it.
+
+\begin{equation}
+    v_{\text{insertion}} =
+        \begin{cases}
+            v_{\text{max}}\left(1-0.9e^{-\lambda\left(F_{\text{input}}-\sum F_{\text{needle}}\right)}\right) & F_{\text{input}}>\sum F_{\text{needle}} \\
+            0.1v_{\text{max}} & F_{\text{input}}<\sum F_{\text{needle}},\\ & F_{\text{input}}>0 \\
+            0 & Otherwise
+        \end{cases}
+    \label{insertion-velocity-eq}
+\end{equation}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[scale=0.25]{insertion_velocity.png}
+    \caption{Insertion velocity for varying $\lambda$}
+    \label{insertion-velocity-fig}
+\end{figure}
