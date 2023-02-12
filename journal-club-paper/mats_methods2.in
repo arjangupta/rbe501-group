@@ -15,3 +15,24 @@ transformations of the tip and the target. We used a color
 segmentation technique to demonstrate the active compensation.
 
 \subsection{Active Compensation}
+
+Before any targeting takes place, registration is performed by
+rigidly attaching a marker to the robot. For example, we would
+attach the marker with MR visible fiducials
+when moving through an MRI machine. This is visually
+supported by Figure \ref{reg-frames-fig}.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.25]{registration-frames.png}
+    \caption{Frames and transformations for image guidance registration}
+    \label{reg-frames-fig}
+\end{figure}
+
+After the registration is complete, the marker is removed.
+The OpenIGTLink \cite{Tokuda2009} communication protocol is used
+to pass down the frame and transformations from image-guidance software
+to the robot controller. As seen by Figure \ref{reg-frames-fig},
+the transformation sequence 
+${T^{Home}_{Pose}}^{-1} {T^{Home}_{Reg}}^{-1} {T^{Image}_{Reg}}^{-1}$
+is used to express the registration with respect to the robot pose.
