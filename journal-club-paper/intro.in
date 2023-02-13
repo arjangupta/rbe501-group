@@ -22,7 +22,7 @@ localization in real-time MR images as shown in Patel \textit{et al} \cite{Patel
 The error in needle accuracy due to deflection, and the amount
 of active compensation possible, is limited by the mechanical 
 properties of the needle. Prior work to model this has been widely implemented
-using the kinematic bicycle model\cite{Webster2006}
+using the kinematic bicycle model~\cite{Webster2006}
 as well as a joint kinematic and dynamic system.\cite{Swensen2012}
 Other approaches (\cite{Engh2010}, \cite{Minhas2007}) use a duty-cycled approach for 
 needle steering. This approach requires insertion and rotation to
