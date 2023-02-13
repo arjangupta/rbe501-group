@@ -1,3 +1,6 @@
-\begin{IEEEbiography}{Debbie Guenthner}
-Biography text here.
+\begin{IEEEbiography}
+[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{debbie_pic.jpg}}]{Debbie Guenthner}
+Debbie is employed with Infor as a Software Engineer.  She graduated from Wichita State University
+in 2019 with Bachelor of Science in Computer Science.  
+She is pursing an understanding of robotic dynamics from Worcester Polytechnic Institute.
 \end{IEEEbiography}
