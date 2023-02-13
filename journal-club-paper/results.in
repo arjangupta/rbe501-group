@@ -7,9 +7,10 @@ The first targeting experiment with static targets had to follow additional crit
 A ten-targeted insertion was used to test the hypothesis that targeting accuracy would improve with active compensation and the targeting accuracy would not be negatively affected when moving from an autonomous to cooperative insertion.  All insertions were inserted until it reached the target depth and confirmed by visual confirmation of tip location using the needle tracking software. The results of experiment show the $Error_{max}$ was found to be 9.30 mm$_{rms}$ for no compensation and 3.79 mm$_{rms}$ for active compensation insertions. Testing on stationary target was determined that accuracy showed no statistically significant difference between autonomous insertions with active compensation and user directed cooperative insertions.  The comparison of targeting accuracy of experiment is shown in Fig.~\ref{resultfig1}. Across all insertions the average target depth was 125.23 mm$_{rms}$ and the average targeting accuracy with active compensation was found to be 3.56 mm$_{rms}$.
 
 \begin{figure}[htbp]
-\centerline{\includegraphics{result figure.png}}
-\caption{Stationary Targeting Accuracy Insertations}
-\label{resultfig1}
+    \centering
+    \includegraphics[scale=0.9]{results_figure.png}
+    \caption{Stationary Targeting Accuracy Insertations}
+    \label{resultfig1}
 \end{figure}
 
 \subsection {Accuracy for Shifted Targets}
