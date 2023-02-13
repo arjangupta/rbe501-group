@@ -23,10 +23,10 @@ The error in needle accuracy due to deflection, and the amount
 of active compensation possible, is limited by the mechanical 
 properties of the needle. Prior work to model this has been widely implemented
 using the kinematic bicycle model~\cite{Webster2006}
-as well as a joint kinematic and dynamic system.\cite{Swensen2012}
+as well as a joint kinematic and dynamic system. \cite{Swensen2012}
 Other approaches (\cite{Engh2010}, \cite{Minhas2007}) use a duty-cycled approach for 
 needle steering. This approach requires insertion and rotation to
-be tightly coupled, prohibiting cooperative control. Rossa \textit{et al},
+be tightly coupled, prohibiting cooperative control. Rossa \textit{et al}, 
 \cite{Rossa2017} presented a similar system with manual
 insertion and autonomous rotation, however it did not have a
 cooperative insertion approach, which increases the accuracy of the
@@ -34,14 +34,14 @@ insertion axis as well.
 
 A cooperative approach was chosen in this system to maintain
 phsyician interaction with the patient. Fully autonomous, isolated
-solutions are more likely to face increased regulatory scrutiny.\cite{Prasad2003}
-Teleoperated systems have been developed to address this issue(\cite{Tse2012}, \cite{Stoianovici2014}, \cite{Pacchierotti2014}).
+solutions are more likely to face increased regulatory scrutiny. \cite{Prasad2003}
+Teleoperated systems have been developed to address this issue (\cite{Tse2012}, \cite{Stoianovici2014}, \cite{Pacchierotti2014}).
 These systems often employ haptic or vibrational feedback to assist the
 physician in positioning the needle, however they still isolate the
 physician physically from the patient. A cooperative control scheme
 has the benefits of teleoperation while keeping the physician in the
 same room as the patient. There are many successful cooperative devices
-in use today(\cite{Schneider2000}, \cite{Jakopec2001}, \cite{Bettini2004}, \cite{Megali2001}).
+in use today (\cite{Schneider2000}, \cite{Jakopec2001}, \cite{Bettini2004}, \cite{Megali2001}).
 
 Prior work in steering needles via needle deflection has focused
 on thin, flexible needles which are not suitable for a clinical
@@ -52,4 +52,4 @@ for unmodeled needle deflection and target shift under cooperatively
 controlled needle insertion, and experimental validation of this on 
 an existing robotic needle placement system with results showing the
 accuracy improvements of autonomous needle placement can be 
-maintained in user directed cooperative insertion.}\cite{Wartenberg2018}
+maintained in user directed cooperative insertion.} \cite{Wartenberg2018}
