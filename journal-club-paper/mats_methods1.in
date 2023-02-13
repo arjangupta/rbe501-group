@@ -1,1 +1,60 @@
-Sample text inside input file for Part 1 of materials and methods.
+\subsection{Workflow}
+The first step for image-guided feedback in cooperative needle insertion is to image a marker so a
+mapping from the image to the robot frame can be created. This mapping is then used to transform
+the insertion target into the robot frame so the robot can configure itself for a straight line
+insertion into the target. Once configured, the physician can initiate cooperative insertion.
+During insertion, the controller receives measurements of the needle tip location and target
+location, which are created from mapping positions in the image into the robot frame. The
+controller fuses these position measurements with measurements of the physician's input force along
+with a kinematic state transition model in order to determine the velocity at which the needle
+should be inserted as well as how the tip should be oriented in order to closely adhere to the
+desired path. Control is terminated once the needle has been inserted to the desired depth or the
+needle has strayed too far from the desired path.
+
+\subsection{Needle Placement Manipulator}
+The robot used in this study inclued a 4-dof alignment base and a 2-dof cooperative control needle
+driver, resulting in a 6-dof system similar to that of \cite{Wartenberg2017} seen in Figure 
+\ref{annotated-robot-fig}. The forces applied by the physician as well as the axial needle forces
+were measured using MLP-10 aluminum load cell sensors. EM-1-1250 optical encoders were used to
+measure robot positions. The motors used for the base, needle insertion, and needle rotation
+were USR-60, USR-45, and USR-30 non-magnetic piezoelectric motors. The biopsy system that was used
+was the 18G175.
+
+The sbRIO-9651 was the hardware used for the embedded control of the robot. The onboard Artix-7
+FPGA was leveraged to handle low-level communication and the provided linux operating system was
+used for C/C++ development of the cooperative control algorithms. The controller was previously
+shown to work in MR environments by \cite{Nycz2017}.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[scale=0.25]{annotated_robot.png}
+    \caption{Annotation of robot components}
+    \label{annotated-robot-fig}
+\end{figure}
+
+\subsection{Cooperative Needle Insertion}
+The velocity of the needle insertion is calculated using the input force from the physician as well
+as the forces experienced by the needle, namely cutting force, tip stiffness, and friction 
+\cite{Okamura2004} using Eq. \eqref{insertion-velocity-eq}. Thus, it is evident that the physician
+can control the insertion velocity through the force they apply. Insertion velocity profiles are
+illustrated for varying values of the decay constant $\lambda$ in Figure
+\ref{insertion-velocity-fig}. In the control system, if the desired insertion depth is reached,
+$\delta F$ is set to 0. Once the desired velocity is calculated using Equation
+\ref{insertion-velocity-eq} a PID controller is used to maintain it.
+
+\begin{equation}
+    v_{\text{insertion}} =
+        \begin{cases}
+            v_{\text{max}}\left(1-0.9e^{-\lambda\left(F_{\text{input}}-\sum F_{\text{needle}}\right)}\right) & F_{\text{input}}>\sum F_{\text{needle}} \\
+            0.1v_{\text{max}} & F_{\text{input}}<\sum F_{\text{needle}},\\ & F_{\text{input}}>0 \\
+            0 & Otherwise
+        \end{cases}
+    \label{insertion-velocity-eq}
+\end{equation}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[scale=0.25]{insertion_velocity.png}
+    \caption{Insertion velocity for varying $\lambda$}
+    \label{insertion-velocity-fig}
+\end{figure}
