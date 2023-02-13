@@ -9,7 +9,8 @@ approach. Furthermore, we were enamored by Gang Li's ingenious CURV
 technique \cite{Li2016PhD} used to dynamically calculate the magnitude
 and direction of the error for closed-loop compensation. It was not
 necessary for the authors of the original paper to choose this bevel
-tip based curvature method, but the fact that it was shows the height
+tip based curvature method (other methods could have shown some success as well), 
+but the fact that CURV was chosen shows the height
 of the innovation of this study.
 
 
