@@ -1,3 +1,8 @@
-\begin{IEEEbiography}{Will Yingling}
-  Biography text here.
+\begin{IEEEbiography}
+[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{will_pic.jpg}}]{Will Yingling} 
+Will Yingling is employed as a software engineer with Spectra Logic Inc.
+He graduated from Colorado State University in 2019 with Bachelor of Science
+in Computer Science and a minor in mathematics. He is currently
+pursuing  his Masters of Science in Robotics Engineering at Worcester
+Polytechnic Institute.
 \end{IEEEbiography}
