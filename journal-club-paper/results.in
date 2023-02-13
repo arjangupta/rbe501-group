@@ -6,15 +6,15 @@ The first targeting experiment with static targets had to follow additional crit
 
 A ten-targeted insertion was used to test the hypothesis that targeting accuracy would improve with active compensation and the targeting accuracy would not be negatively affected when moving from an autonomous to cooperative insertion.  All insertions were inserted until it reached the target depth and confirmed by visual confirmation of tip location using the needle tracking software. The results of experiment show the $Error_{max}$ was found to be 9.30 mm$_{rms}$ for no compensation and 3.79 mm$_{rms}$ for active compensation insertions. Testing on stationary target was determined that accuracy showed no statistically significant difference between autonomous insertions with active compensation and user directed cooperative insertions.  The comparison of targeting accuracy of experiment is shown in Fig.~\ref{resultfig1}. Across all insertions the average target depth was 125.23 mm$_{rms}$ and the average targeting accuracy with active compensation was found to be 3.56 mm$_{rms}$.
 
+\begin{figure}[htbp]
+\centerline{\includegraphics{result figure.png}}
+\caption{Stationary Targeting Accuracy Insertations}
+\label{resultfig1}
+\end{figure}
+
 \subsection {Accuracy for Shifted Targets}
 The second targeting experiment with shifted target during cooperative insertions.  The hypothesis was projected that Errormax  would be less than 9.30 mm$_{rms}$ for no compensation since this was achieved with a static target.
 A twenty-targeted insertion was used to test this hypothesis in the same setup and tissue as the static experiment.  The difference was once the needle contacted the phantom there was a target shift.  The shift was virtually in the targe plane perpendicular to the insertion axis, with both direction and magnitude assigned randomly.  The range of direction was within 360° and magnitude between 1 and 10mm.  The results of experiment show the Errormax was found to be between 2.00 and 6.00 mm$_{rms}$.
 \subsection {Accuracy of Feature Localization}
 Validating the accuracy of feature localization to ensure the use of needle tracking outputs for robot control. A five-sample insertion was performed in the tissue as the two other experiments.  The camera resolution was 640 x 480 pixels.
 The results of experiment showed that the error over the length of all insertions was 10.78 pixels$_{rms}$ along the needle insertion path and 1.05 pixels$_{rms}$ perpendicular to the insertion path.  The phantom boundary was 2.65 and 0.12 mm$_{rms}$.
-
-\begin{figure}[htbp]
-\centerline{\includegraphics{result figure.png}}
-\caption{Stationary Targeting Accuracy Insertations}
-\label{resultfig1}
-\end{figure}
