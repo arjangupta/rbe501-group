@@ -1,6 +1,5 @@
 \subsection{Feature Localization}
-For evaluation of the closed-loop active compensation during cooperatively
-controlled needle insertions, we use two cameras to capture real-time
+We used two cameras to capture real-time
 images of the needle tip and target within the robot workspace.
 This is a suitable substitute for medical imaging, in fact the
 compensation technique is not dependent on the modality of 
@@ -16,9 +15,9 @@ segmentation technique to demonstrate the active compensation.
 
 \subsection{Active Compensation}
 
-Before any targeting takes place, registration is performed by
+Before targeting, registration is performed by
 rigidly attaching a marker to the robot. For example, we would
-attach the marker with MR visible fiducials
+attach the marker with an MR visible object 
 when moving through an MRI machine. This is visually
 supported by Figure \ref{reg-frames-fig}.
 
