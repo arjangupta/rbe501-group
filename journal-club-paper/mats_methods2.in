@@ -58,9 +58,9 @@ Equation \ref{ang-vel-eqn} gives the angular velocity as a function
 of $\theta$ and $\theta_d$. Here, widening the Guassian width $c$
 gives a bigger range of angles where rotation occurs below the nominal
 velocity. Also, increasing the Guassian magnitude $\alpha$ leads to more
-deflection in $\theta_d$. The authors of this synopsis recommend referencing
-Gang Li's excellent disseration \cite{Li2016PhD} for the angular velocity profile
-graph of CURV. While CURV was used in this work, it is possible to use other
+deflection in $\theta_d$. Gang Li's disseration \cite{Li2016PhD} can
+be consulted for the angular velocity profile
+graph of CURV. Also, while CURV was used in this work, it is possible to use other
 bevel tip based curvature models.
 
 To calculate the $\theta_d$ in our case, we used the $atan2$ function
@@ -68,7 +68,7 @@ on the $x$ and $y$ positions obtained from $T^{Tip}_{Target}$. We set
 $c$ is Equation \ref{ang-vel-eqn} to $10\degree$ for all insertions. The
 $\alpha$ was chosen as an intermediate curvature value by projecting the needle
 tip orientation onto the target plane. For projecting the orientation,
-we first found the Euler angle rotation about the x and y axes, and then
+we first found the Euler angle rotation about the $x$ and $y$ axes, and then
 used the following equations,
 
 \begin{equation}
@@ -79,5 +79,18 @@ used the following equations,
     Y_{projected} = D_i \times \arctan(Rot(x))
 \end{equation}
 
-Where $D_i$ is the remaining insertion depth.
+Where $D_i$ is the remaining insertion depth. The $x$ and $y$ values
+of the current projection were also used to calculate the $X_error$
+and $Y_error$, which is the difference between the projection and
+target location. The overall error was given as,
+
+\begin{equation}
+    Error_{projection} = \sqrt{(X_{e} + X_{p})^2 + (Y_{e} + Y_{p})^2}
+\end{equation}
+
+where the subscript $e$ signifies error, and subscript $p$ signifies
+projection. Iterative values of $\alpha$ were calcualted using the following,
+\begin{equation}
+    \alpha = \frac{Error_{projected}}{Error_{max}}
+\end{equation}
 
