@@ -1,3 +1,13 @@
+The significance and innovation are presented clearly by the original
+authors. This paper strives to present the first cooperative robotic
+system for biopsy needle insertion. This allows the physician to take
+advantage of robotic positioning accuracy while maintaining close 
+contact with the patient. Furthermore, this paper shows that prior
+work done on needle steering can be applied practically in a clinical
+biopsy setting. Previous work was conducted on solid-core needles 
+with limited real-world usefulness. These innovations will lead to
+practical clinical devices which will improve physician accuracy
+while reducing procedure cost and patient discomfort.
 
 For the feature localization and active compensation portions of the
 Materials and Methods, the synopsis authors hold high opinions about
@@ -12,6 +22,19 @@ necessary for the authors of the original paper to choose this bevel
 tip based curvature method (other methods could have shown some success as well), 
 but the fact that CURV was chosen shows the height
 of the innovation of this study.
+
+Reviewing the results of stationary targets led to a few discoveries.  
+Three things were discovered since there was not an improvement of accuracy 
+between autonomous and user directed cooperative insertions 1) closed-loop 
+active compensation is an improvement to open-loop manual insertion, 2) 
+lack of degradation of needle moving from autonomous to cooperative 
+insertion, and 3) the robot is user-friendly to any skill level. 
+Reviewing the results of shifted targets clearly defined that accuracy 
+can be maintained up to 5mm which leads to less collection time of 
+biopsies in the first insertion. It was clearly noticeable that the 
+visual tracking software improved the guiding of insertion which led 
+the physician to being more confident.
+
 
 
 % references section
